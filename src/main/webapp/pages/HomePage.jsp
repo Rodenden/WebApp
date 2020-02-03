@@ -8,26 +8,12 @@
 </head>
 <body onload="bodyLoad()">
 <h1>Hello</h1>
+<a href="/admin"><button>Admin</button></a>
 <br>
-<form name="login">
-    <input type="text" name="login" placeholder="Your login">
-    <input type="password" name="password" placeholder="Your password">
-    <input type="submit" value="Login">
-</form>
+<a href="/login"><button>Login</button></a>
 <br>
-<form name="changeRole">
-    <input type="text" name="login" placeholder="User's login">
-    <select name="role">
-        <option>USER</option>
-        <option>ADMINISTRATOR</option>
-        <option>ANONYMOUS</option>
-    </select>
-    <input type="submit" value="Apply">
-</form>
 <a href="/register"><button>Registry</button></a>
 <br>
 <a href="/content"><button>Content</button></a>
-<br>
-<button id="showButton">Show All Users</button>
 </body>
 </html>

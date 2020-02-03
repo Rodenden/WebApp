@@ -1,19 +1,18 @@
 'use strict';
+
 function bodyLoad() {
-    let addForm = document.forms.addForm;
-    addForm.onsubmit = function () {
+    let loginForm = document.forms.login;
+    loginForm.onsubmit = function () {
         event.preventDefault();
-        let formData = new FormData(addForm);
+        let formData = new FormData(loginForm);
         let dataToJSON = {};
         formData.forEach((value, key) => dataToJSON[key] = value);
-        dataToJSON.role = 'USER';
-        post('/addUser', dataToJSON).then(function (value) {
-            if (value != 200) document.body.append("This login is used yet");
+        post('/loginAction', dataToJSON).then(function (value) {
+            if (value != 200) document.body.append("Login/password incorrect");
             else document.body.append("OK");
         });
     };
 }
-
 async function post(requestUrl, body) {
     let result = await fetch(requestUrl, {
         method: 'POST',

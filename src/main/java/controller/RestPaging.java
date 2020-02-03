@@ -41,7 +41,7 @@ public class RestPaging {
         return OK;
     }
 
-    @PostMapping("/login")
+    @PostMapping("/loginAction")
     public ResponseEntity loginAction(@NotNull @RequestBody User user){
         User userFromDB = service.getUserByLogin(user.getLogin());
         if (userFromDB.getPassword().equals(user.getPassword())) return OK;
