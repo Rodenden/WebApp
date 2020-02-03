@@ -21,7 +21,7 @@ public class UserService{
         return (List<User>) repository.findAll();
     }
 
-    public void addUser(User user){
+    public void saveUser(User user){
         repository.save(user);
     }
 

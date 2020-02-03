@@ -11,6 +11,8 @@ public class User {
 
     private String login;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
     public User() {
     }
@@ -44,12 +46,21 @@ public class User {
         this.password = password;
     }
 
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

@@ -15,6 +15,15 @@
     <input type="submit" value="Login">
 </form>
 <br>
+<form name="changeRole">
+    <input type="text" name="login" placeholder="User's login">
+    <select name="role">
+        <option>USER</option>
+        <option>ADMINISTRATOR</option>
+        <option>ANONYMOUS</option>
+    </select>
+    <input type="submit" value="Apply">
+</form>
 <a href="/register"><button>Registry</button></a>
 <br>
 <a href="/content"><button>Content</button></a>

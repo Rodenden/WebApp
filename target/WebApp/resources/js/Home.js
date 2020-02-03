@@ -7,6 +7,7 @@ function bodyLoad() {
             document.body.append(await response.text());
         }
     };
+
     let loginForm = document.forms.login;
     loginForm.onsubmit = function () {
         event.preventDefault();
@@ -15,6 +16,18 @@ function bodyLoad() {
         formData.forEach((value, key) => dataToJSON[key] = value);
         post('/login', dataToJSON).then(function (value) {
             if (value != 200) document.body.append("Login/password incorrect");
+            else document.body.append("OK");
+        });
+    };
+
+    let changeForm = document.forms.changeRole;
+    changeForm.onsubmit = function () {
+        event.preventDefault();
+        let formData = new FormData(changeForm);
+        let dataToJSON = {};
+        formData.forEach((value, key) => dataToJSON[key] = value);
+        post('/changeRole', dataToJSON).then(function (value) {
+            if (value != 200) document.body.append("Login incorrect");
             else document.body.append("OK");
         });
     };
