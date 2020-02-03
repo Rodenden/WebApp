@@ -9,6 +9,12 @@
 <body onload="bodyLoad()">
 <h1>Hello</h1>
 <br>
+<form name="login">
+    <input type="text" name="login" placeholder="Your login">
+    <input type="password" name="password" placeholder="Your password">
+    <input type="submit" value="Login">
+</form>
+<br>
 <a href="/register"><button>Registry</button></a>
 <br>
 <a href="/content"><button>Content</button></a>

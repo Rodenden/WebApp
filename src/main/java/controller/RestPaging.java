@@ -1,6 +1,7 @@
 package controller;
 
 import model.User;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class RestPaging {
     }
 
     @PostMapping("/addUser")
-    public ResponseEntity addUser(@RequestBody User user){
+    public ResponseEntity addUser(@NotNull @RequestBody User user){
         try {
             service.addUser(user);
         }catch (Exception ex){
@@ -36,5 +37,12 @@ public class RestPaging {
             return BAD_REQUEST;
         }
         return OK;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity loginAction(@NotNull @RequestBody User user){
+        User userFromDB = service.getUserByLogin(user.getLogin());
+        if (userFromDB.getPassword().equals(user.getPassword())) return OK;
+        else return BAD_REQUEST;
     }
 }

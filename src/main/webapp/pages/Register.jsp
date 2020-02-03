@@ -9,7 +9,7 @@
 <body onload="bodyLoad()">
 <h1>Register please</h1>
 <br>
-<form name="addForm" id="addForm">
+<form name="addForm">
     <h2>Add new User</h2>
     <input type="text" name="login" placeholder="Login">
     <input type="password" name="password" placeholder="Password">
