@@ -6,12 +6,12 @@ public class Init extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{WebConfig.class};
+        return new Class[]{AppConfig.class, WebSecurityConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return null;
+        return new Class[]{WebConfig.class};
     }
 
     @Override

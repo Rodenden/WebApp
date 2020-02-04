@@ -44,6 +44,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll();
 
     }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/css/**");
+    }
+
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
