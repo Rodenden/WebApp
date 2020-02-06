@@ -62,7 +62,7 @@ public class AppConfig {
     private Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        properties.setProperty("spring.jpa.hibernate.ddl-auto","update");
+        properties.setProperty("hibernate.hbm2ddl.auto","update");
 
         return properties;
     }
