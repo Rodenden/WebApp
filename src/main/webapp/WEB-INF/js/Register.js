@@ -1,17 +1,16 @@
 'use strict';
 function bodyLoad() {
-    let addForm = document.forms.addForm;
+    /*let addForm = document.forms.addForm;
     addForm.onsubmit = function () {
         event.preventDefault();
         let formData = new FormData(addForm);
         let dataToJSON = {};
         formData.forEach((value, key) => dataToJSON[key] = value);
-        dataToJSON.role = 'USER';
         post('/addUser', dataToJSON).then(function (value) {
             if (value != 200) document.body.append("This login is used yet");
             else document.body.append("OK");
         });
-    };
+    };*/
 }
 
 async function post(requestUrl, body) {

@@ -30,6 +30,18 @@ public class RestPaging {
         return service.getAllUsers();
     }
 
+    /*@PostMapping("/addUser")
+    public ResponseEntity addUser(@RequestParam (value = "login") String login,
+                                  @RequestParam (value = "password") String password){
+        try {
+            service.saveUser(new User(login, password));
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return BAD_REQUEST;
+        }
+        return OK;
+    }
+*/
     @PostMapping("/addUser")
     public ResponseEntity addUser(@NotNull @RequestBody User user){
         try {
